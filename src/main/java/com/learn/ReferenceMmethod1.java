@@ -9,6 +9,10 @@ public class ReferenceMmethod1 {
         System.out.println("exec method invoke");
         return "hello";
     }
+    static String exec(String name){
+        System.out.println("exec method invoke"+name);
+        return "hello";
+    }
     public static void main(String[] args) {
         Runnable r=()->{};
         Consumer<String>c=(a)->{};
