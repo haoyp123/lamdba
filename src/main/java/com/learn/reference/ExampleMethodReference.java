@@ -1,6 +1,4 @@
-package com.learn;
-
-import com.sun.glass.ui.Size;
+package com.learn.reference;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

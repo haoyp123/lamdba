@@ -1,4 +1,4 @@
-package com.learn;
+package com.learn.reference;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
