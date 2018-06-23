@@ -3,6 +3,7 @@ package com.learn;
 import com.sun.glass.ui.Size;
 
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -15,6 +16,12 @@ public class ExampleMethodReference {
     public void size(Integer size){
         System.out.println("size:"+size);
     };
+    public String  put(String name){
+        return "hello"+name;
+    }
+    public void test(){
+        Function<String,String> f4=this::put;
+    }
     public static void main(String[] args) {
         Supplier s1= ()-> new ExampleMethodReference().put();
         Supplier s2=new ExampleMethodReference()::put;
