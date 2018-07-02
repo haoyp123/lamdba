@@ -1,5 +1,6 @@
 package com.learn.stream;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +8,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MiddleOperate {
+    public static double count(List<User>users){
+        double sum = users.stream().map(user -> user.getAge()).mapToDouble(x -> x).sum();
+        return sum;
+    }
+    public static List<String> getNamesAndAges(List<User>users){
+        List<? extends Serializable> collect = users.stream().flatMap(user -> Stream.of(user.getAge(), user.getName())).collect(Collectors.toList());
+        return (List<String>) collect;
+    }
     public static void main(String[] args) {
        /* Arrays.asList(1,2,3,4,5,6).stream().filter(x -> x%2==0).forEach(System.out::println);
         int sum = Arrays.asList(1, 2, 3, 4, 5, 6).stream().filter(x -> x % 2 == 0).mapToInt(x -> x).sum();
