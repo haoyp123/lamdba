@@ -6,6 +6,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Test {
+    public static String getResult1(String str){
+        if(null!=str&&!"".equals(str)){
+
+            return Arrays.stream(str.split("\\|")).map(e -> "'" + e + "'").collect(Collectors.joining(",","(",")"));
+        }
+        return null;
+    }
     public static void main(String[] args) {
         List<Integer> collect = Arrays.asList(1, 2, 3, 4, 5, 6).stream().map(a -> a + 1).filter(a -> a % 2 != 0).collect(Collectors.toList());
         Stream<Integer> stream = Arrays.asList(1, 2, 3, 4, 5, 6).stream().map(a -> a + 1).filter(a -> a % 2 != 0);
